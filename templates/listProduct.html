@@ -1,0 +1,33 @@
+{% extends 'Home.html' %}
+{% block content %}
+    <h1 class="text-center form-title">List Form.</h1>
+    <hr>
+    <table class="table text-center">
+        <tr>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Screen</th>
+            <th>Cpu</th>
+            <th>Vga</th>
+            <th>Ram</th>
+            <th>Harddisk</th>
+            <th>Sum</th>
+            <th>Discount</th>
+            <th>Total</th>
+        </tr>
+        {% for product in product %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.model }}</td>
+                <td>{{ product.screen }}</td>
+                <td>{{ product.cpu }}</td>
+                <td>{{ product.vga }}</td>
+                <td>{{ product.ram }}</td>
+                <td>{{ product.harddisk }}</td>
+                <td>{{ product.pSum|floatformat:2 }}</td>
+                <td>{{ product.pDiscount|floatformat:2 }}</td>
+                <td>{{ product.pTotal|floatformat:2 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
