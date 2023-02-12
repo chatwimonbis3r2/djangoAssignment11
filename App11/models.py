@@ -88,9 +88,9 @@ class Product(models.Model):
         if self.pSum() <20000:
             pDiscount = self.pSum()*5/100
         elif self.pSum() <30000:
-            pDiscount = self.pSum()*15/100
-        else:
             pDiscount = self.pSum()*10/100
+        else:
+            pDiscount = self.pSum()*15/100
         return  pDiscount
 
     def pTotal(self):
